@@ -70,14 +70,38 @@
   <br />
   <h2>Latest Posts</h2>
   <hr />
-  {% for blog in blogs.all%}
+
+
+  <!-- {% for blog in blogs.all%}
   <a href="{% url 'detail' blog.id %}"><h3>{{blog.title}}</h3></a>
   {{blog.pub_date}}
   <br />
   <img class="img-fluid" src="{{blog.image.url}}" height=400 with=400/>
   <br />
   <p>{{blog.summary}}</p>
-  {% endfor %}
+  {% endfor %} -->
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+
+        {% for blog in blogs.all %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{blog.image.url}}"/>
+            <div class="card-body">
+              <p class="card-text">{{blog.summary}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+
 </div>
 
 
